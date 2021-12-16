@@ -16,7 +16,7 @@ public class TestBookingService {
 
     @Test
     public void testGetPosition() throws Exception {
-        Booking booking1 = BookingManagementService.createBooking(1, 2);
+        BookingManagementService.createBooking(1, 2);
         int position = BookingManagementService.getPosition(1);
         assertEquals(position, 2);
     }

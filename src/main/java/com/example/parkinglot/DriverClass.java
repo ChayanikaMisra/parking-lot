@@ -1,6 +1,5 @@
 package com.example.parkinglot;
 
-import com.example.parkinglot.entity.ParkingLot;
 import com.example.parkinglot.service.ParkingManagementService;
 
 import java.util.Scanner;
@@ -11,7 +10,6 @@ public class DriverClass {
         System.out.println("Create Parking Lot");
         System.out.println("Number of positions");
         int numberofPositions = sc.nextInt();
-        ParkingLot parkingLot = ParkingManagementService.createParkingLot(numberofPositions);
         System.out.println("Car no entering:");
         int carNo1 = sc.nextInt();
         System.out.println("Car no entering:");
@@ -22,15 +20,18 @@ public class DriverClass {
         int carNo4 = sc.nextInt();
         System.out.println("Car no entering:");
         int carNo5 = sc.nextInt();
-        ParkingManagementService.enterParkingLot(parkingLot, carNo1);
-        ParkingManagementService.enterParkingLot(parkingLot, carNo2);
-        ParkingManagementService.enterParkingLot(parkingLot, carNo3);
-        ParkingManagementService.enterParkingLot(parkingLot, carNo4);
-        ParkingManagementService.enterParkingLot(parkingLot, carNo5);
-        ParkingManagementService.exitParkingLot(parkingLot, carNo1);
-        ParkingManagementService.exitParkingLot(parkingLot, carNo2);
-        ParkingManagementService.enterParkingLot(parkingLot, carNo3);
-        ParkingManagementService.enterParkingLot(parkingLot, carNo4);
+
+        ParkingManagementService parkingService=new ParkingManagementService();
+        parkingService.createParkingLot(numberofPositions);
+        parkingService.enterParkingLot(carNo1);
+        parkingService.enterParkingLot(carNo2);
+        parkingService.enterParkingLot(carNo3);
+        parkingService.enterParkingLot(carNo4);
+        parkingService.enterParkingLot(carNo5);
+        parkingService.exitParkingLot(carNo1);
+        parkingService.exitParkingLot(carNo2);
+        parkingService.exitParkingLot(carNo3);
+        parkingService.exitParkingLot(carNo4);
 
 
     }
